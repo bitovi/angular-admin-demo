@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 type AuthData = {
@@ -14,7 +14,7 @@ export class AuthService {
 
   public username: Observable<string | undefined>;
 
-  private _authData = new ReplaySubject<AuthData | undefined>(1);
+  private _authData = new BehaviorSubject<AuthData | undefined>(undefined);
 
   constructor() {
     this.loggedIn = this._authData.pipe(

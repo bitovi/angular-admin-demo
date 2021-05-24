@@ -7,7 +7,7 @@ import { ResetPasswordPageComponent } from './reset-password-page/reset-password
 
 const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
-  { path: '', component: HomePageComponent },
+  { path: '', component: HomePageComponent, canActivate: [LoggedInGuard] },
   { path: 'reset-password', component: ResetPasswordPageComponent },
 ];
 
