@@ -13,9 +13,17 @@ import { HeaderComponent } from './header/header.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { ResetPasswordPageComponent } from './reset-password-page/reset-password-page.component';
+import { SidebarNavComponent } from './sidebar-nav/sidebar-nav.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomePageComponent, LoginPageComponent, ResetPasswordPageComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    HomePageComponent,
+    LoginPageComponent,
+    ResetPasswordPageComponent,
+    SidebarNavComponent,
+  ],
   imports: [ButtonModule, CardModule, BrowserAnimationsModule, BrowserModule, AppRoutingModule],
   providers: [AuthService],
   bootstrap: [AppComponent],
