@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HeaderComponent],
   imports: [ButtonModule, CardModule, BrowserAnimationsModule, BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
