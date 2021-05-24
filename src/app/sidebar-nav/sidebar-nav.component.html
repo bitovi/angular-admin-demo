@@ -1,7 +1,7 @@
 <nav>
   <ul>
     <li *ngFor="let route of routes">
-      <a [href]="'/' + route.path">{{ route.path }}</a>
+      <a [href]="'/' + route.path">{{ route.name }}</a>
     </li>
   </ul>
 </nav>
