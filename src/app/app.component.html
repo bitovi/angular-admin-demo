@@ -1,1 +1,14 @@
 <p>Hello, world!</p>
+
+<p-card header="Test Card" subheader="For some content" [style]="{ width: '360px' }" styleClass="p-card-shadow">
+  <ng-template pTemplate="header">
+    <img
+      src="https://www.bitovi.com/hs-fs/hubfs/Screen%20Shot%202020-11-13%20at%202.37.57%20PM.png?width=461&name=Screen%20Shot%202020-11-13%20at%202.37.57%20PM.png"
+      alt="The Bitovi Angular team doing some learning"
+    />
+  </ng-template>
+  <p>The Angular team learned about how component inheritance can help you.</p>
+  <ng-template pTemplate="footer">
+    <a pButton label="More" href="https://www.bitovi.com/blog/angular-consulting-at-bitovi" target="_blank"></a>
+  </ng-template>
+</p-card>
