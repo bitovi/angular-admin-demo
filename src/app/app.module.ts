@@ -8,11 +8,11 @@ import { AppComponent } from './app.component';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { HeaderComponent } from './header/header.component';
-import { HomeComponent } from './home/home.component';
+import { HomePageComponent } from './home-page/home-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent, LoginPageComponent],
+  declarations: [AppComponent, HeaderComponent, HomePageComponent, LoginPageComponent],
   imports: [ButtonModule, CardModule, BrowserAnimationsModule, BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
