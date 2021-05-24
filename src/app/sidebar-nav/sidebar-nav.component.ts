@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { routes } from '../app-routing.module';
 
 @Component({
   selector: 'app-sidebar-nav',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidebar-nav.component.scss'],
 })
 export class SidebarNavComponent {
-  constructor() {}
+  routes = routes;
 }

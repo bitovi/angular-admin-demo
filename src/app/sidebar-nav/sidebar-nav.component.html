@@ -1,1 +1,7 @@
-<p>sidebar-nav works!</p>
+<nav>
+  <ul>
+    <li *ngFor="let route of routes">
+      <a [href]="'/' + route.path">{{ route.path }}</a>
+    </li>
+  </ul>
+</nav>

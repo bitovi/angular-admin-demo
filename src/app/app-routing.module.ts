@@ -5,7 +5,7 @@ import { LoggedInGuard } from './logged-in.guard';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { ResetPasswordPageComponent } from './reset-password-page/reset-password-page.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: '', component: HomePageComponent, canActivate: [LoggedInGuard] },
   { path: 'reset-password', component: ResetPasswordPageComponent },
