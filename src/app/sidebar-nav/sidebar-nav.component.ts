@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { routes } from '../app-routing.module';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { AuthService } from '../auth.service';
 
 /* eslint-disable no-unused-vars */
 export enum SidebarIcon {
@@ -9,11 +11,48 @@ export enum SidebarIcon {
 }
 /* eslint-enable no-unused-vars */
 
+type RouteUIData = {
+  name: string;
+  icon: SidebarIcon;
+  path: string;
+  showWhileLoggedIn: boolean;
+  showWhileLoggedOut: boolean;
+};
+
 @Component({
   selector: 'app-sidebar-nav',
   templateUrl: './sidebar-nav.component.html',
   styleUrls: ['./sidebar-nav.component.scss'],
 })
 export class SidebarNavComponent {
-  routes = routes;
+  visibleRoutes: Observable<Array<RouteUIData>>;
+
+  private readonly allRoutes: Array<RouteUIData> = [
+    {
+      name: 'Home',
+      icon: SidebarIcon.home,
+      path: '',
+      showWhileLoggedIn: true,
+      showWhileLoggedOut: false,
+    },
+    {
+      name: 'Log In',
+      icon: SidebarIcon.logIn,
+      path: '/login',
+      showWhileLoggedIn: false,
+      showWhileLoggedOut: true,
+    },
+  ];
+
+  constructor(private authService: AuthService) {
+    this.visibleRoutes = authService.loggedIn.pipe(
+      map((loggedIn) => {
+        if (loggedIn) {
+          return this.allRoutes.filter((route) => route.showWhileLoggedIn);
+        } else {
+          return this.allRoutes.filter((route) => route.showWhileLoggedOut);
+        }
+      })
+    );
+  }
 }
