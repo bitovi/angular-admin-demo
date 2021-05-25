@@ -8,6 +8,7 @@ export enum SidebarIcon {
   home = 'pi-home',
   logIn = 'pi-sign-in',
   reset = 'pi-user',
+  list = 'pi-list',
 }
 /* eslint-enable no-unused-vars */
 
@@ -41,6 +42,13 @@ export class SidebarNavComponent {
       path: '/login',
       showWhileLoggedIn: false,
       showWhileLoggedOut: true,
+    },
+    {
+      name: 'Internal Data',
+      icon: SidebarIcon.list,
+      path: '/internal-data',
+      showWhileLoggedIn: true,
+      showWhileLoggedOut: false,
     },
   ];
 
