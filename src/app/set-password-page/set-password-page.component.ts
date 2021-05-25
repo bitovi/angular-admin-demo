@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { filter, take } from 'rxjs/operators';
-import { AuthService } from '../auth.service';
+import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-set-password-page',
@@ -11,40 +9,34 @@ import { AuthService } from '../auth.service';
 })
 export class SetPasswordPageComponent implements OnInit {
   passwordForm = new FormGroup({
-    username: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
     repeated: new FormControl('', Validators.required),
   });
 
-  constructor(private authService: AuthService, private route: ActivatedRoute) {
-    route.queryParams
-      .pipe(
-        filter((params) => params.username),
-        take(1)
-      )
-      .subscribe((username) => {
-        this.passwordForm.get('username')?.patchValue(username);
-      });
-  }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
-    const matchValidatorFactory = (): ValidatorFn => {
-      return (control: AbstractControl): ValidationErrors | null => {
-        const passwordControl = control.get('password') as FormControl;
-        const repeatedControl = control.get('repeated') as FormControl;
-        const match = passwordControl.value === repeatedControl.value;
-        return match ? null : { passwordMismatch: true };
-      };
+    const matchValidator = (control: AbstractControl): ValidationErrors | null => {
+      const passwordControl = control.get('password') as FormControl;
+      const repeatedControl = control.get('repeated') as FormControl;
+      const match = passwordControl.value === repeatedControl.value;
+      console.log(control);
+      return match ? null : { passwordMismatch: true };
     };
-    this.passwordForm.setValidators(matchValidatorFactory);
+    this.passwordForm.setValidators(matchValidator);
+  }
+
+  shouldDisplayPasswordMismatchMessage(formGroup: AbstractControl): boolean {
+    const passwordControlTouched = formGroup.get('password')?.touched;
+    const repeatedControlTouched = formGroup.get('repeated')?.touched;
+    return formGroup.errors?.passwordMismatch && passwordControlTouched && repeatedControlTouched;
   }
 
   shouldDisplayRequiredMessage(formControl: AbstractControl): boolean {
-    return formControl.touched && formControl.invalid;
+    return formControl.touched && formControl.errors?.required;
   }
 
   submit(): void {
-    const { username, password } = this.passwordForm.value;
-    this.authService.logIn(username, password);
+    this.router.navigate(['/', 'login']);
   }
 }
