@@ -44,6 +44,13 @@ export class SidebarNavComponent {
       showWhileLoggedOut: true,
     },
     {
+      name: 'Reset Password',
+      icon: SidebarIcon.reset,
+      path: '/reset-password',
+      showWhileLoggedIn: true,
+      showWhileLoggedOut: true,
+    },
+    {
       name: 'Internal Data',
       icon: SidebarIcon.list,
       path: '/internal-data',
