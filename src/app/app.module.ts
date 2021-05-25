@@ -26,10 +26,10 @@ import { SidebarNavComponent } from './sidebar-nav/sidebar-nav.component';
     SidebarNavComponent,
   ],
   imports: [
-    ButtonModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
-    AppRoutingModule,
+    ButtonModule,
     InputTextModule,
     ReactiveFormsModule,
   ],
