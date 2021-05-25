@@ -1,6 +1,19 @@
-<form [formGroup]="loginForm">
-  <span class="p-input-icon-left">
-    <i class="pi pi-user"></i>
-    <input type="text" pInputText id="username-input" type="username" placeholder="Username" />
-  </span>
+<form [formGroup]="loginForm" class="p-m-4">
+  <h2>Log In</h2>
+  <div class="p-field">
+    <span class="p-input-icon-left">
+      <i class="pi pi-user"></i>
+      <input type="text" pInputText id="username-input" placeholder="Username" />
+    </span>
+  </div>
+  <div class="p-field">
+    <span class="p-input-icon-left">
+      <i class="pi pi-unlock"></i>
+      <input type="text" pInputText id="password-input" placeholder="Password" />
+    </span>
+  </div>
+
+  <div class="p-d-flex p-jc-end">
+    <p-button icon="pi pi-sign-in" iconPos="right" label="Log In"></p-button>
+  </div>
 </form>
