@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login-page',
@@ -12,5 +14,11 @@ export class LoginPageComponent {
     password: new FormControl('', Validators.required),
   });
 
-  constructor() {}
+  constructor(private authService: AuthService, private router: Router) {}
+
+  logIn(): void {
+    const { username, password } = this.loginForm.value;
+    this.authService.logIn(username, password);
+    this.router.navigate(['/']);
+  }
 }
