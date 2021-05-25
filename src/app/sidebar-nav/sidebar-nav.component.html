@@ -1,5 +1,5 @@
 <nav>
-  <ul>
+  <ul class="p-pl-0">
     <li *ngFor="let route of routes" class="p-p-1 p-m-1">
       <a pButton [href]="'/' + route.path" [label]="route.name" icon="pi {{ route.icon }}"></a>
     </li>
