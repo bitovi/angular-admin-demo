@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header [loggedIn]="authService.loggedIn | async"></app-header>
 <main class="p-d-sm-flex">
   <app-sidebar-nav></app-sidebar-nav>
   <router-outlet></router-outlet>

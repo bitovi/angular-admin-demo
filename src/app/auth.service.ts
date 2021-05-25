@@ -27,7 +27,11 @@ export class AuthService {
     this.username = this._authData.pipe(map((authData) => authData?.username));
   }
 
-  logIn(username: string, password: string) {
+  logIn(username: string, password: string): void {
     this._authData.next({ username });
+  }
+
+  logOut(): void {
+    this._authData.next(undefined);
   }
 }

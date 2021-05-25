@@ -17,6 +17,7 @@ import { ResetPasswordPageComponent } from './reset-password-page/reset-password
 import { SidebarNavComponent } from './sidebar-nav/sidebar-nav.component';
 import { InternalDataPageComponent } from './internal-data-page/internal-data-page.component';
 import { SettingsPageComponent } from './settings-page/settings-page.component';
+import { LogOutButtonComponent } from './log-out-button/log-out-button.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { SettingsPageComponent } from './settings-page/settings-page.component';
     SidebarNavComponent,
     InternalDataPageComponent,
     SettingsPageComponent,
+    LogOutButtonComponent,
   ],
   imports: [
     AppRoutingModule,

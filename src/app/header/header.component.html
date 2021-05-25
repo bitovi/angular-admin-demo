@@ -1,4 +1,4 @@
 <header class="p-d-flex p-jc-between p-ai-center p-shadow-8 p-pl-4 p-pr-4">
   <h1>Admin Dashboard</h1>
-  <p-button label="Log Out" class="p-button-secondary"></p-button>
+  <app-log-out-button [ngClass]="{ 'p-d-none': !loggedIn }"></app-log-out-button>
 </header>
