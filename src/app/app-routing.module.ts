@@ -11,8 +11,8 @@ const routes: Routes = [
   { path: '', component: HomePageComponent, canActivate: [LoggedInGuard] },
   { path: 'login', component: LoginPageComponent },
   { path: 'reset-password', component: ResetPasswordPageComponent },
-  { path: 'internal-data', component: InternalDataPageComponent },
-  { path: 'settings', component: SettingsPageComponent },
+  { path: 'internal-data', component: InternalDataPageComponent, canActivate: [LoggedInGuard] },
+  { path: 'settings', component: SettingsPageComponent, canActivate: [LoggedInGuard] },
 ];
 
 @NgModule({
