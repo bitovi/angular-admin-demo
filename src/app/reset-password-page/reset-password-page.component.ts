@@ -32,6 +32,6 @@ export class ResetPasswordPageComponent {
   }
 
   shouldDisplayRequiredMessage(formControl: AbstractControl): boolean {
-    return formControl.touched && formControl.invalid;
+    return formControl.touched && formControl.errors?.required;
   }
 }
