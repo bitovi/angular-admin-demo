@@ -18,6 +18,7 @@ import { SidebarNavComponent } from './sidebar-nav/sidebar-nav.component';
 import { InternalDataPageComponent } from './internal-data-page/internal-data-page.component';
 import { SettingsPageComponent } from './settings-page/settings-page.component';
 import { LogOutButtonComponent } from './log-out-button/log-out-button.component';
+import { SetPasswordPageComponent } from './set-password-page/set-password-page.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { LogOutButtonComponent } from './log-out-button/log-out-button.component
     InternalDataPageComponent,
     SettingsPageComponent,
     LogOutButtonComponent,
+    SetPasswordPageComponent,
   ],
   imports: [
     AppRoutingModule,
