@@ -16,6 +16,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { ResetPasswordPageComponent } from './reset-password-page/reset-password-page.component';
 import { SidebarNavComponent } from './sidebar-nav/sidebar-nav.component';
 import { InternalDataPageComponent } from './internal-data-page/internal-data-page.component';
+import { SettingsPageComponent } from './settings-page/settings-page.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { InternalDataPageComponent } from './internal-data-page/internal-data-pa
     ResetPasswordPageComponent,
     SidebarNavComponent,
     InternalDataPageComponent,
+    SettingsPageComponent,
   ],
   imports: [
     AppRoutingModule,

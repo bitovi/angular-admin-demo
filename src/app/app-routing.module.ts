@@ -5,12 +5,14 @@ import { InternalDataPageComponent } from './internal-data-page/internal-data-pa
 import { LoggedInGuard } from './logged-in.guard';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { ResetPasswordPageComponent } from './reset-password-page/reset-password-page.component';
+import { SettingsPageComponent } from './settings-page/settings-page.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent, canActivate: [LoggedInGuard] },
   { path: 'login', component: LoginPageComponent },
   { path: 'reset-password', component: ResetPasswordPageComponent },
   { path: 'internal-data', component: InternalDataPageComponent },
+  { path: 'settings', component: SettingsPageComponent },
 ];
 
 @NgModule({
