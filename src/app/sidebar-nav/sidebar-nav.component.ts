@@ -10,6 +10,7 @@ export enum SidebarIcon {
   reset = 'pi-user',
   list = 'pi-list',
   settings = 'pi-cog',
+  star = 'pi-star',
 }
 /* eslint-enable no-unused-vars */
 
@@ -43,6 +44,13 @@ export class SidebarNavComponent {
       path: '/login',
       showWhileLoggedIn: false,
       showWhileLoggedOut: true,
+    },
+    {
+      name: 'UI Demo',
+      icon: SidebarIcon.star,
+      path: '/ui-demo',
+      showWhileLoggedIn: true,
+      showWhileLoggedOut: false,
     },
     {
       name: 'Reset Password',
