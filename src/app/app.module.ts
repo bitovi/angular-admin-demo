@@ -10,6 +10,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 
 import { AuthService } from './auth.service';
+import { CountryService } from './countryservice';
 import { HeaderComponent } from './header/header.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
@@ -19,12 +20,15 @@ import { InternalDataPageComponent } from './internal-data-page/internal-data-pa
 import { SettingsPageComponent } from './settings-page/settings-page.component';
 import { LogOutButtonComponent } from './log-out-button/log-out-button.component';
 import { SetPasswordPageComponent } from './set-password-page/set-password-page.component';
+import { AppBreadcrumbService } from './app.breadcrumb.service';
+import { InputDemoComponent } from './input-demo-page/inputdemo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomePageComponent,
+    InputDemoComponent,
     LoginPageComponent,
     ResetPasswordPageComponent,
     SidebarNavComponent,
@@ -41,7 +45,7 @@ import { SetPasswordPageComponent } from './set-password-page/set-password-page.
     InputTextModule,
     ReactiveFormsModule,
   ],
-  providers: [AuthService],
+  providers: [AppBreadcrumbService, AuthService, CountryService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

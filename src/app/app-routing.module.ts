@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
+import { InputDemoComponent } from './input-demo-page/inputdemo.component';
 import { InternalDataPageComponent } from './internal-data-page/internal-data-page.component';
 import { LoggedInGuard } from './logged-in.guard';
 import { LoginPageComponent } from './login-page/login-page.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'internal-data', component: InternalDataPageComponent, canActivate: [LoggedInGuard] },
   { path: 'settings', component: SettingsPageComponent, canActivate: [LoggedInGuard] },
   { path: 'set-password', component: SetPasswordPageComponent },
+  { path: 'ui-demo', component: InputDemoComponent, canActivate: [LoggedInGuard] },
 ];
 
 @NgModule({
