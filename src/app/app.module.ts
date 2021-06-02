@@ -11,15 +11,20 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 import { CalendarModule } from 'primeng/calendar';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ChipsModule } from 'primeng/chips';
+import { ColorPickerModule } from 'primeng/colorpicker';
 import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { InputSwitchModule } from 'primeng/inputswitch';
 import { InputTextModule } from 'primeng/inputtext';
 import { KnobModule } from 'primeng/knob';
 import { ListboxModule } from 'primeng/listbox';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { RadioButtonModule } from 'primeng/radiobutton';
 import { RatingModule } from 'primeng/rating';
 import { SelectButtonModule } from 'primeng/selectbutton';
+import { SliderModule } from 'primeng/slider';
+import { ToggleButtonModule } from 'primeng/togglebutton';
 
 import { AuthService } from './auth.service';
 import { CountryService } from './countryservice';
@@ -59,17 +64,22 @@ import { HttpClientModule } from '@angular/common/http';
     CalendarModule,
     CheckboxModule,
     ChipsModule,
+    ColorPickerModule,
     DropdownModule,
     FormsModule,
     HttpClientModule,
     InputNumberModule,
+    InputSwitchModule,
     InputTextModule,
     KnobModule,
     ListboxModule,
     MultiSelectModule,
+    RadioButtonModule,
     RatingModule,
     ReactiveFormsModule,
     SelectButtonModule,
+    SliderModule,
+    ToggleButtonModule,
   ],
   providers: [AppBreadcrumbService, AuthService, CountryService],
   bootstrap: [AppComponent],
