@@ -1,40 +1,46 @@
-<form [formGroup]="loginForm" class="p-m-4">
-  <h2>Log In</h2>
-  <div class="p-field">
-    <span class="p-input-icon-left">
-      <i class="pi pi-user"></i>
-      <input formControlName="username" type="text" pInputText id="username-input" placeholder="Username" />
-    </span>
-    <small
-      *ngIf="shouldDisplayRequiredMessage(loginForm.controls.username)"
-      id="username-input-help"
-      class="p-error p-d-block"
-      >This field is required.</small
-    >
-  </div>
-  <div class="p-field">
-    <span class="p-input-icon-left">
-      <i class="pi pi-unlock"></i>
-      <input formControlName="password" type="password" pInputText id="password-input" placeholder="Password" />
-    </span>
-    <small
-      *ngIf="shouldDisplayRequiredMessage(loginForm.controls.password)"
-      id="username-input-help"
-      class="p-error p-d-block"
-      >This field is required.</small
-    >
-    <p>
-      <a routerLink="/reset-password">Forgot your password?</a>
-    </p>
-  </div>
+<div class="login-panel p-m-4">
+  <a routerLink="/" class="logo">
+    <img src="assets/img/venuetize-logo.png" alt="Venuetize" />
+  </a>
+  <form [formGroup]="loginForm" class="p-m-4 login-form">
+    <h2>Log In</h2>
+    <div class="p-field">
+      <span class="p-input-icon-left">
+        <i class="pi pi-user"></i>
+        <input formControlName="username" type="text" pInputText id="username-input" placeholder="Username" />
+      </span>
+      <small
+        *ngIf="shouldDisplayRequiredMessage(loginForm.controls.username)"
+        id="username-input-help"
+        class="p-error p-d-block"
+        >This field is required.</small
+      >
+    </div>
+    <div class="p-field">
+      <span class="p-input-icon-left">
+        <i class="pi pi-unlock"></i>
+        <input formControlName="password" type="password" pInputText id="password-input" placeholder="Password" />
+      </span>
+      <small
+        *ngIf="shouldDisplayRequiredMessage(loginForm.controls.password)"
+        id="username-input-help"
+        class="p-error p-d-block"
+        >This field is required.</small
+      >
+      <p>
+        <a routerLink="/reset-password">Forgot your password?</a>
+      </p>
+    </div>
 
-  <div class="p-d-flex p-jc-end">
-    <p-button
-      (click)="logIn()"
-      [disabled]="loginForm.invalid"
-      icon="pi pi-sign-in"
-      iconPos="right"
-      label="Log In"
-    ></p-button>
-  </div>
-</form>
+    <div class="p-d-flex p-jc-end">
+      <p-button
+        (click)="logIn()"
+        [disabled]="loginForm.invalid"
+        pRipple
+        icon="pi pi-sign-in"
+        iconPos="right"
+        label="Log In"
+      ></p-button>
+    </div>
+  </form>
+</div>
