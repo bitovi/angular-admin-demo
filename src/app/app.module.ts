@@ -34,6 +34,7 @@ import { LogOutButtonComponent } from './log-out-button/log-out-button.component
 import { SetPasswordPageComponent } from './set-password-page/set-password-page.component';
 import { AppBreadcrumbService } from './app.breadcrumb.service';
 import { InputDemoComponent } from './input-demo-page/inputdemo.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { InputDemoComponent } from './input-demo-page/inputdemo.component';
     ChipsModule,
     DropdownModule,
     FormsModule,
+    HttpClientModule,
     InputNumberModule,
     InputTextModule,
     KnobModule,
