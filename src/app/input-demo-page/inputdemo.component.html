@@ -183,7 +183,7 @@
       <p-selectButton
         [options]="paymentOptions"
         [(ngModel)]="valSelect1"
-        multiple="multiple"
+        [multiple]="false"
         optionLabel="name"
       ></p-selectButton>
 
@@ -191,7 +191,7 @@
       <p-selectButton
         [options]="paymentOptions"
         [(ngModel)]="valSelect2"
-        multiple="multiple"
+        [multiple]="true"
         optionLabel="name"
       ></p-selectButton>
     </div>

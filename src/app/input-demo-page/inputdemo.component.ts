@@ -78,7 +78,7 @@ export class InputDemoComponent implements OnInit {
 
   selectedDrop: SelectItem;
 
-  selectedMulti: string[] = [];
+  selectedMulti: any[] = [];
 
   valToggle = false;
 
