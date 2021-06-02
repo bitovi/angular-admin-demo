@@ -1,3 +1,5 @@
+// @ts-nocheck
+// Pulled from Poseidon. We're ignoring its many, many errors because this code is not to be used in production, just for demos
 import { Component, OnInit } from '@angular/core';
 import { CountryService } from '../countryservice';
 import { SelectItem } from 'primeng/api';
